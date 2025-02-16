@@ -1,0 +1,64 @@
+"Hello to the world of GIT STASH.
+"this is a common file for git stash.
+//some commands to be used for git stash:-
+
+
+Working with git stash can be really helpful when you need to temporarily save changes without committing them, especially if you want to switch branches or pull changes without losing work in progress. Here's a breakdown of common git stash operations:
+
+1. Stashing Changes
+To stash all staged and unstaged changes:
+
+git stash
+This saves your changes and reverts the working directory to match the last commit.
+
+2. Stashing Specific Files
+You can stash only specific files by specifying them:
+git stash push <file1> <file2>
+
+3. Viewing Stashed Changes
+To list all stashed changes:
+
+git stash list
+It shows a list like this:
+
+stash@{0}: WIP on main: <commit-message>
+stash@{1}: WIP on feature: <commit-message>
+
+4. Applying Stashed Changes
+To apply the latest stash without removing it from the stash list:
+
+git stash apply
+To apply a specific stash:
+
+git stash apply stash@{1}
+
+5. Removing Stash
+To remove the latest stash after applying it:
+
+git stash drop
+To drop a specific stash:
+
+git stash drop stash@{1}
+6. Popping the Stash
+To apply and remove the latest stash in one command:
+
+git stash pop
+7. Stashing Untracked Files
+To include untracked and ignored files in your stash:
+
+git stash -u
+
+8. Creating a Named Stash
+To create a stash with a custom message:
+
+git stash push -m "Your stash message"
+
+9. Show Stashed Changes
+To see the diff of stashed changes:
+
+git stash show -p stash@{0}
+
+10. Cleaning Stash
+To clear all stashed changes:
+
+git stash clear
